@@ -1,23 +1,45 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './App.css'
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Superheroes from '../components/Superheroes'
+import Superheroes from '../components/Superheroes';
+import NavBar from "../components/NavBar";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [heroes, setHeroes] = useState([]);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    fetch("/heroes.json")
+      .then((res) => res.json())
+      .then((data) => setHeroes(data));
+  }, []);
 
   return (
-    <>
-    <Header></Header>
-    <Superheroes></Superheroes>
-    <div className="aviso">
-      <p className="notas">Notas:</p>
-      <p>Las tarjetas con borde morado y fondo lila son favoritas. El buscador filtra en tiempo real por nombre</p>
-    </div>
-    <Footer></Footer>
+   <>
+      <Header />
+
+      <NavBar
+        search={search}
+        setSearch={setSearch}
+      />
+
+      <Superheroes
+        heroes={heroes}
+        search={search}
+      />
+
+      <div className="aviso">
+        <p className="notas">Notas:</p>
+        <p>
+          Las tarjetas con borde morado y fondo lila son favoritas.
+          El buscador filtra en tiempo real por nombre
+        </p>
+      </div>
+
+      <Footer />
     </>
-  )
+  );
 }
 
 export default App
