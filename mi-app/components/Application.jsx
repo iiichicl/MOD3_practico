@@ -1,5 +1,5 @@
 import { useState } from "react";
-import HeroCard from "./HeroeCard";
+import HeroeCard from "./HeroeCard";
 import "./Superheroes.css";
 
 export default function Superheroes({
@@ -28,7 +28,7 @@ export default function Superheroes({
       <p>No tenemos a ese superhéroe...</p>
     ) : (
       filteredHeroes.map((hero) => (
-        <HeroCard
+        <HeroeCard
           key={hero.id}
           hero={hero}
           isFavorite={favorites.includes(hero.id)}
