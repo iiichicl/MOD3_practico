@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import './App.css'
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Superheroes from '../components/Superheroes';
+import Application from '../components/Application';
 import NavBar from "../components/NavBar";
 
 function App() {
@@ -18,17 +18,15 @@ function App() {
   return (
    <>
       <Header />
-
       <NavBar
         search={search}
         setSearch={setSearch}
       />
 
-      <Superheroes
+      <Application
         heroes={heroes}
         search={search}
       />
-
       <div className="aviso">
         <p className="notas">Notas:</p>
         <p>
@@ -36,7 +34,6 @@ function App() {
           El buscador filtra en tiempo real por nombre
         </p>
       </div>
-
       <Footer />
     </>
   );

@@ -1,8 +1,4 @@
-export default function HeroCard({
-  hero,
-  isFavorite,
-  toggleFavorite,
-}) {
+export default function HeroeCard({hero,isFavorite,toggleFavorite,}) {
   return (
     <div
       className={`card ${
@@ -10,11 +6,7 @@ export default function HeroCard({
       }`}
     >
       <h3>{hero.nombre}</h3>
-
-      <p>Poder: {hero.poder}</p>
-
-      <p>Categoría: {hero.categoria}</p>
-
+      <p className="poder">{hero.poder}</p>
       <button
         onClick={() =>
           toggleFavorite(hero.id)
@@ -22,7 +14,7 @@ export default function HeroCard({
       >
         {isFavorite
           ? "♥ Favorito"
-          : "▢ Favorito"}
+          : "♡ Favorito"}
       </button>
     </div>
   );

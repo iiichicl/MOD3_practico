@@ -1,9 +1,9 @@
 export default function NavBar({ search, setSearch }) {
   return (
     <div className="search-container">
-      <input
+      <input className="buscador"
         type="text"
-        placeholder="Buscar superhéroe..."
+        placeholder="Buscar héroe..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />

@@ -23,15 +23,19 @@ export default function Superheroes({
   };
 
   return (
-    <div className="container">
-      {filteredHeroes.map((hero) => (
+  <div className="container">
+    {filteredHeroes.length === 0 ? (
+      <p>No tenemos a ese superhéroe...</p>
+    ) : (
+      filteredHeroes.map((hero) => (
         <HeroCard
           key={hero.id}
           hero={hero}
           isFavorite={favorites.includes(hero.id)}
           toggleFavorite={toggleFavorite}
         />
-      ))}
-    </div>
+      ))
+    )}
+  </div>
   );
 }
