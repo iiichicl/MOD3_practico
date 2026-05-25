@@ -6,16 +6,16 @@ export default function Superheroes({
   heroes,
   search,
 }) {
-  const [favorites, setFavorites] = useState([]);
+  const [favoritos, setFavoritos] = useState([]);
 
-  const filteredHeroes = heroes.filter((hero) =>
+  const heroesFiltrados = heroes.filter((hero) =>
     hero.nombre
       .toLowerCase()
       .includes(search.toLowerCase())
   );
 
-  const toggleFavorite = (heroId) => {
-    setFavorites((prev) =>
+  const toggleFavorito = (heroId) => {
+    setFavoritos((prev) =>
       prev.includes(heroId)
         ? prev.filter((id) => id !== heroId)
         : [...prev, heroId]
@@ -23,19 +23,21 @@ export default function Superheroes({
   };
 
   return (
-  <div className="container">
-    {filteredHeroes.length === 0 ? (
-      <p>No tenemos a ese superhéroe...</p>
-    ) : (
-      filteredHeroes.map((hero) => (
-        <HeroeCard
-          key={hero.id}
-          hero={hero}
-          isFavorite={favorites.includes(hero.id)}
-          toggleFavorite={toggleFavorite}
-        />
-      ))
-    )}
-  </div>
+    <div className="contenedor">
+      {heroesFiltrados.length === 0 ? (
+        <p className="error">
+          ☹︎ No tenemos a ese superhéroe...
+        </p>
+      ) : (
+        heroesFiltrados.map((hero) => (
+          <HeroeCard
+            key={hero.id}
+            hero={hero}
+            isFavorito={favoritos.includes(hero.id)}
+            toggleFavorito={toggleFavorito}
+          />
+        ))
+      )}
+    </div>
   );
 }

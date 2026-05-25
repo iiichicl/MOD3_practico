@@ -10,11 +10,14 @@
 
 
 body{
+  display: flex;
     background-color: var(--color-light);
+    justify-content: end;
 }
 
 h1{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color-dark);
     font-weight: 600;
     font-size: 30px;
 }
@@ -23,10 +26,11 @@ h1{
   display: flex;
   justify-content: flex-start;
   margin: 55px;
-  padding: 10px;
+  padding: 15px;
+  padding-left: 36px;
   padding-right: 705px;
   border: 2px solid var(--color-primary);
-  border-radius: 20px;
+  border-radius: 25px;
 }
 
 input{
@@ -43,52 +47,55 @@ input{
   display:flex;
   justify-content:center;
   align-items:center;
-  font-weight:bold;
-  font-size:20px;
+  font-size:24px;
   margin:0 auto 15px auto;
 }
 
 .icono-favorito{
-  width:60px;
-  height:60px;
-  border-radius:50%;
+  width:58px;
+  height:58px;
   background-color: var(--color-primary);
-  color: var(--color-dark);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-weight:bold;
-  font-size:20px;
-  margin:0 auto 15px auto;
 }
 
-.container{
+.contenedor{
   display:flex;
   flex-wrap:wrap;
-  gap:20px;
+  gap:25px;
   justify-content:center;
 }
 
-.card{
-  width:200px;
+.contenedor-busqueda{
+  display:flex;
+  justify-content:center;
+}
+
+h3{
+  color: var(--color-dark);
+  font-size: 18px;
+}
+
+.tarjeta{
+  width:250px;
   padding:20px;
   border-radius:10px;
   background:var(--color-white);
   text-align:center;
-  font-size: 14px;
+  font-size:14px;
 }
 
-.card img{
+.tarjeta img{
   width:100px;
 }
 
-.favorite{
+.favorito{
+  width:246px;
+  height:178px;
   background-color: var(--color-primary-light);
-  border: 2px solid var(--color-primary);
+  border:2px solid var(--color-primary);
 }
 
 button{
-  padding:8px 44px;
+  padding:9px 44px;
   background-color: var(--color-white);
   border: 2px solid;
   border-radius: 20px;
@@ -102,8 +109,14 @@ button{
 }
 
 .btn-favorito{
+  padding:10px 44px;
   background-color: var(--color-primary);
   color: var(--color-white);
+}
+
+.error{
+  color: var(--color-gray);
+  font-size: 16px;
 }
 
 .aviso{
@@ -112,17 +125,17 @@ button{
     flex-direction: column;
     align-items: flex-start;
     background-color: var(--color-primary-light);
-    border-radius: 15px;
-    padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
     color: var(--color-dark);
+    border-radius: 15px;
+    padding: 13px 25px;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    margin:20px;
+    margin:55px;
 }
 
 .notas{
     color: var(--color-primary);
-    font-weight: 600;
+    font-weight: bolder;
 }
 
 footer{
