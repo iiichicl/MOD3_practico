@@ -1,6 +1,6 @@
 import { useState } from "react";
 import HeroeCard from "./HeroeCard";
-import "./Superheroes.css";
+import "./Application.css";
 
 export default function Superheroes({
   heroes,

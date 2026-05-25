@@ -1,3 +1,4 @@
+import "./NavBar.css";
 export default function NavBar({search,setSearch,}) {
   return (
     <div className="contenedor-busqueda">

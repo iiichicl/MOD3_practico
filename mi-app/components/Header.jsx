@@ -1,5 +1,4 @@
-import "./Superheroes.css";
-
+import "./Application.css";
 export default function Header() {
   return (
     <header>

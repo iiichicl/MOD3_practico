@@ -1,3 +1,4 @@
+import "./Application.css"
 export default function Footer() {
   return (
     <footer>

@@ -1,3 +1,4 @@
+import "./HeroeCard.css";
 export default function HeroeCard({hero,isFavorito,toggleFavorito,}) {
   return (
     <div
